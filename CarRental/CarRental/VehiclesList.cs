@@ -31,8 +31,8 @@ namespace CarRental
 
                 if (result == DialogResult.OK)
                 {
-                    int editedVehicleIndex = Vehicle.Vehicles.IndexOf(Vehicle.Vehicles.FirstOrDefault(v => v.Id == editingForm.EditedVehicle.Id));
-                    Vehicle.Vehicles[editedVehicleIndex] = editingForm.EditedVehicle;
+                    int editedVehicleIndex = Vehicle.Vehicles.IndexOf(Vehicle.Vehicles.FirstOrDefault(v => v.Id == editingForm.Vehicle.Id));
+                    Vehicle.Vehicles[editedVehicleIndex] = editingForm.Vehicle;
 
                     objectListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 

@@ -7,18 +7,23 @@ namespace CarRental
 {
     public partial class VehicleForm : Form
     {
-        public Vehicle EditedVehicle;
-        private readonly Vehicle _vehicle;
+        public Vehicle Vehicle;
+        private readonly Vehicle _vehicle = new Vehicle();
 
         public VehicleForm(Vehicle vehicle)
+            :this()
         {
             _vehicle = vehicle;
-            InitializeComponent();
-            StatusBox.Items.AddRange(Enum.GetValues(typeof(VehicleStatus)).Cast<object>().ToArray());
-            SizeBox.Items.AddRange(Enum.GetValues(typeof(VehicleSize)).Cast<object>().ToArray());
 
             SizeBox.SelectedItem = _vehicle.Size;
             StatusBox.SelectedItem = _vehicle.Status;
+        }
+
+        public VehicleForm()
+        {
+            InitializeComponent();
+            StatusBox.Items.AddRange(Enum.GetValues(typeof(VehicleStatus)).Cast<object>().ToArray());
+            SizeBox.Items.AddRange(Enum.GetValues(typeof(VehicleSize)).Cast<object>().ToArray());
         }
 
         public void SetDataBindings()
@@ -34,9 +39,9 @@ namespace CarRental
 
         private void button1_Click(object sender, EventArgs e)
         {
-            EditedVehicle = _vehicle;
-            EditedVehicle.Size = (VehicleSize)SizeBox.SelectedItem;
-            EditedVehicle.Status = (VehicleStatus)StatusBox.SelectedItem;
+            Vehicle = _vehicle;
+            Vehicle.Size = (VehicleSize)SizeBox.SelectedItem;
+            Vehicle.Status = (VehicleStatus)StatusBox.SelectedItem;
 
             DialogResult = DialogResult.OK;
             Close();

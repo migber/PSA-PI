@@ -1,5 +1,6 @@
 ﻿using System.Windows.Forms;
 using CarRental.Models.Contract;
+using CarRental.Models.Vehicle;
 
 namespace CarRental
 {
@@ -28,7 +29,22 @@ namespace CarRental
                 {
                     Contract.Contracts.Add(form.Contract);
 
-                    contractsList1.UpdateContracts();
+                    RefreshAllData();
+                }
+            }
+        }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            using (var form = new VehicleForm())
+            {
+                form.SetDataBindings();
+                var result = form.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    Vehicle.Vehicles.Add(form.Vehicle);
+
                     RefreshAllData();
                 }
             }
