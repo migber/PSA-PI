@@ -30,14 +30,42 @@ namespace CarRental
         /// </summary>
         private void InitializeComponent()
         {
-            this.vehiclesList1 = new CarRental.VehiclesList();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.contractsList = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.vehiclesList1 = new CarRental.VehiclesList();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.contractsList1 = new CarRental.ContractsList();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabControl1.SuspendLayout();
+            this.NewContract = new System.Windows.Forms.Button();
+            this.contractsList.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // contractsList
+            // 
+            this.contractsList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.contractsList.Controls.Add(this.tabPage1);
+            this.contractsList.Controls.Add(this.tabPage2);
+            this.contractsList.Controls.Add(this.tabPage3);
+            this.contractsList.Location = new System.Drawing.Point(12, 72);
+            this.contractsList.Name = "contractsList";
+            this.contractsList.SelectedIndex = 0;
+            this.contractsList.Size = new System.Drawing.Size(816, 428);
+            this.contractsList.TabIndex = 3;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.vehiclesList1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(808, 399);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Vehicles List";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // vehiclesList1
             // 
@@ -45,73 +73,74 @@ namespace CarRental
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.vehiclesList1.Location = new System.Drawing.Point(3, 6);
+            this.vehiclesList1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.vehiclesList1.Name = "vehiclesList1";
-            this.vehiclesList1.Size = new System.Drawing.Size(799, 432);
+            this.vehiclesList1.Size = new System.Drawing.Size(799, 387);
             this.vehiclesList1.TabIndex = 2;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(816, 488);
-            this.tabControl1.TabIndex = 3;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.vehiclesList1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 40);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(808, 444);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Vehicles List";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 40);
+            this.tabPage2.Controls.Add(this.contractsList1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1238, 864);
+            this.tabPage2.Size = new System.Drawing.Size(808, 399);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Contracts List";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // contractsList1
+            // 
+            this.contractsList1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.contractsList1.Location = new System.Drawing.Point(0, 0);
+            this.contractsList1.Margin = new System.Windows.Forms.Padding(2);
+            this.contractsList1.Name = "contractsList1";
+            this.contractsList1.Size = new System.Drawing.Size(806, 399);
+            this.contractsList1.TabIndex = 0;
             // 
             // tabPage3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 40);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1238, 864);
+            this.tabPage3.Size = new System.Drawing.Size(808, 459);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // NewContract
+            // 
+            this.NewContract.Location = new System.Drawing.Point(19, 13);
+            this.NewContract.Name = "NewContract";
+            this.NewContract.Size = new System.Drawing.Size(110, 23);
+            this.NewContract.TabIndex = 4;
+            this.NewContract.Text = "New Contract";
+            this.NewContract.UseVisualStyleBackColor = true;
+            this.NewContract.Click += new System.EventHandler(this.NewContract_Click);
+            // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(840, 512);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.NewContract);
+            this.Controls.Add(this.contractsList);
             this.Name = "MainForm";
-            this.tabControl1.ResumeLayout(false);
+            this.contractsList.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private VehiclesList vehiclesList1;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl contractsList;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
+        private VehiclesList vehiclesList1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private ContractsList contractsList1;
+        private System.Windows.Forms.Button NewContract;
     }
 }
 

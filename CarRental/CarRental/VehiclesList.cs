@@ -7,29 +7,37 @@ namespace CarRental
 {
     public partial class VehiclesList : UserControl
     {
-        private IList<Vehicle> _vehicles = Vehicle.InitialVehiclesList();
-
         public VehiclesList()
         {
             InitializeComponent();
 
-            objectListView1.AddObjects(_vehicles.ToList());
+            objectListView1.AddObjects(Vehicle.InitialVehiclesList());
             objectListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
+
+        public void UpdateVehicles()
+        {
+            objectListView1.Objects = Vehicle.Vehicles;
         }
 
         private void Edit_Click(object sender, System.EventArgs e)
         {
             var selectedVehicle = objectListView1.SelectedObject as Vehicle;
 
-            using (var editingForm = new VehicleEditingForm(selectedVehicle))
+            using (var editingForm = new VehicleForm(selectedVehicle))
             {
-                editingForm.SetVehicleValues();
+                editingForm.SetDataBindings();
                 var result = editingForm.ShowDialog();
 
                 if (result == DialogResult.OK)
                 {
-                    objectListView1.UpdateObject(editingForm.editedVehicle);
+                    int editedVehicleIndex = Vehicle.Vehicles.IndexOf(Vehicle.Vehicles.FirstOrDefault(v => v.Id == editingForm.EditedVehicle.Id));
+                    Vehicle.Vehicles[editedVehicleIndex] = editingForm.EditedVehicle;
+
                     objectListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
+                    var a = objectListView1.Parent.Parent.Parent.Parent as MainForm;
+                    a.RefreshAllData();
                 }
             }
         }

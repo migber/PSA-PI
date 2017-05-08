@@ -4,6 +4,7 @@ namespace CarRental.Models.Vehicle
 {
     public class Vehicle
     {
+        public int Id { get; set; }
         public string Color { get; set; }
         public int Cost { get; set; }
         public string Wear { get; set; }
@@ -13,8 +14,11 @@ namespace CarRental.Models.Vehicle
         public int Year { get; set; }
         public VehicleStatus Status { get; set; }
         public VehicleSize Size { get; set; }
+        public string DisplayName => Brand + " " + Model;
 
-        public static IList<Vehicle> InitialVehiclesList()
+        public static List<Vehicle> Vehicles = InitialVehiclesList();
+
+        public static List<Vehicle> InitialVehiclesList()
         {
             var vehicles = new List<Vehicle>
             {
@@ -28,7 +32,8 @@ namespace CarRental.Models.Vehicle
                     Status = VehicleStatus.Free,
                     Type = "Hachback",
                     Wear = "Minimal",
-                    Year = 2009
+                    Year = 2009,
+                    Id = 1
                 },
                 new Vehicle
                 {
@@ -40,7 +45,8 @@ namespace CarRental.Models.Vehicle
                     Status = VehicleStatus.Free,
                     Type = "Sedan",
                     Wear = "Minimal",
-                    Year = 2011
+                    Year = 2011,
+                    Id = 2
                 },
                 new Vehicle
                 {
@@ -52,7 +58,8 @@ namespace CarRental.Models.Vehicle
                     Status = VehicleStatus.UnderRepair,
                     Type = "Sedan",
                     Wear = "Minimal",
-                    Year = 2009
+                    Year = 2009,
+                    Id = 3
                 },
                 new Vehicle
                 {
@@ -64,7 +71,8 @@ namespace CarRental.Models.Vehicle
                     Status = VehicleStatus.Free,
                     Type = "Hachback",
                     Wear = "None",
-                    Year = 2010
+                    Year = 2010,
+                    Id = 4
                 },
                 new Vehicle
                 {
@@ -76,7 +84,8 @@ namespace CarRental.Models.Vehicle
                     Status = VehicleStatus.Free,
                     Type = "SUV",
                     Wear = "Minimal",
-                    Year = 2009
+                    Year = 2009,
+                    Id = 5
                 },
                 new Vehicle
                 {
@@ -88,7 +97,8 @@ namespace CarRental.Models.Vehicle
                     Status = VehicleStatus.InUse,
                     Type = "Sedan",
                     Wear = "Minimal",
-                    Year = 2008
+                    Year = 2008,
+                    Id = 6
                 },
                 new Vehicle
                 {
@@ -100,7 +110,8 @@ namespace CarRental.Models.Vehicle
                     Status = VehicleStatus.Free,
                     Type = "Hachback",
                     Wear = "Minimal",
-                    Year = 2015
+                    Year = 2015,
+                    Id = 7
                 },
                 new Vehicle
                 {
@@ -112,7 +123,8 @@ namespace CarRental.Models.Vehicle
                     Status = VehicleStatus.InUse,
                     Type = "SUV",
                     Wear = "Minimal",
-                    Year = 2013
+                    Year = 2013,
+                    Id = 8
                 },
                 new Vehicle
                 {
@@ -124,7 +136,8 @@ namespace CarRental.Models.Vehicle
                     Status = VehicleStatus.Free,
                     Type = "Sedan",
                     Wear = "Minimal",
-                    Year = 2008
+                    Year = 2008,
+                    Id = 9
                 },
                 new Vehicle
                 {
@@ -136,7 +149,8 @@ namespace CarRental.Models.Vehicle
                     Status = VehicleStatus.Free,
                     Type = "Sedan",
                     Wear = "Minimal",
-                    Year = 2010
+                    Year = 2010,
+                    Id = 10
                 },
                 new Vehicle
                 {
@@ -148,11 +162,11 @@ namespace CarRental.Models.Vehicle
                     Status = VehicleStatus.InUse,
                     Type = "Sedan",
                     Wear = "Minimal",
-                    Year = 2013
+                    Year = 2013,
+                    Id = 11
                 },
 
             };
-
 
             return vehicles;
         }

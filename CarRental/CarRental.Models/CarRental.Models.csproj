@@ -40,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contract\Contract.cs" />
+    <Compile Include="Contract\ContractStatus.cs" />
+    <Compile Include="Customer\Customer.cs" />
+    <Compile Include="PaymentMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vehicle\VehicleSize.cs" />
     <Compile Include="Vehicle\VehicleStatus.cs" />

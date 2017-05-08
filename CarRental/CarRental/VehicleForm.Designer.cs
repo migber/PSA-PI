@@ -1,9 +1,10 @@
 ﻿using System;
 using CarRental.Models.Vehicle;
+using System.Linq;
 
 namespace CarRental
 {
-    partial class VehicleEditingForm
+    partial class VehicleForm
     {
         /// <summary>
         /// Required designer variable.
@@ -147,10 +148,6 @@ namespace CarRental
             // StatusBox
             // 
             this.StatusBox.FormattingEnabled = true;
-            this.StatusBox.Items.AddRange(new object[] {
-            "Free",
-            "InUse",
-            "UnderRepair"});
             this.StatusBox.Location = new System.Drawing.Point(550, 35);
             this.StatusBox.Name = "StatusBox";
             this.StatusBox.Size = new System.Drawing.Size(177, 39);
@@ -177,14 +174,6 @@ namespace CarRental
             // SizeBox
             // 
             this.SizeBox.FormattingEnabled = true;
-            this.SizeBox.Items.AddRange(new object[] {
-            "XXS",
-            "XS",
-            "S",
-            "M",
-            "L",
-            "XL",
-            "XXL"});
             this.SizeBox.Location = new System.Drawing.Point(758, 35);
             this.SizeBox.Name = "SizeBox";
             this.SizeBox.Size = new System.Drawing.Size(177, 39);
@@ -299,7 +288,6 @@ namespace CarRental
         private System.Windows.Forms.Label Wear;
         private System.Windows.Forms.Button button1;
 
-        public Vehicle editedVehicle;
         private System.Windows.Forms.ComboBox StatusBox;
         private System.Windows.Forms.Label Status;
         private System.Windows.Forms.Label label1;
