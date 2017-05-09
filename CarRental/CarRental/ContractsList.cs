@@ -22,17 +22,25 @@ namespace CarRental
         {
             var selectedContract = objectListView1.SelectedObject as Contract;
 
-            using (var editingForm = new ContractForm(selectedContract))
+            if (selectedContract == null)
             {
-                editingForm.SetDataBindings();
-                var result = editingForm.ShowDialog();
-
-                if (result == DialogResult.OK)
+                MessageBox.Show("You must select a contract", "Error");
+            }
+            else
+            {
+                using (var editingForm = new ContractForm(selectedContract))
                 {
-                    objectListView1.UpdateObject(editingForm.Contract);
-                    objectListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                    editingForm.SetDataBindings();
+                    var result = editingForm.ShowDialog();
+
+                    if (result == DialogResult.OK)
+                    {
+                        objectListView1.UpdateObject(editingForm.Contract);
+                        objectListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                    }
                 }
             }
+
         }
     }
 }

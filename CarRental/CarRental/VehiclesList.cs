@@ -23,21 +23,27 @@ namespace CarRental
         private void Edit_Click(object sender, System.EventArgs e)
         {
             var selectedVehicle = objectListView1.SelectedObject as Vehicle;
-
-            using (var editingForm = new VehicleForm(selectedVehicle))
+            if (selectedVehicle == null)
             {
-                editingForm.SetDataBindings();
-                var result = editingForm.ShowDialog();
-
-                if (result == DialogResult.OK)
+                MessageBox.Show("You must select a vehicle", "Error");
+            }
+            else
+            {
+                using (var editingForm = new VehicleForm(selectedVehicle))
                 {
-                    int editedVehicleIndex = Vehicle.Vehicles.IndexOf(Vehicle.Vehicles.FirstOrDefault(v => v.Id == editingForm.Vehicle.Id));
-                    Vehicle.Vehicles[editedVehicleIndex] = editingForm.Vehicle;
+                    editingForm.SetDataBindings();
+                    var result = editingForm.ShowDialog();
 
-                    objectListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                    if (result == DialogResult.OK)
+                    {
+                        int editedVehicleIndex = Vehicle.Vehicles.IndexOf(Vehicle.Vehicles.FirstOrDefault(v => v.Id == editingForm.Vehicle.Id));
+                        Vehicle.Vehicles[editedVehicleIndex] = editingForm.Vehicle;
 
-                    var a = objectListView1.Parent.Parent.Parent.Parent as MainForm;
-                    a.RefreshAllData();
+                        objectListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
+                        var a = objectListView1.Parent.Parent.Parent.Parent as MainForm;
+                        a.RefreshAllData();
+                    }
                 }
             }
         }
