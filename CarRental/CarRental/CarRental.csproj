@@ -54,6 +54,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminForm\AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm\AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DriverForm\DriverForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DriverForm\DriverForm.Designer.cs">
+      <DependentUpon>DriverForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GuestForm\GuestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuestForm\GuestForm.Designer.cs">
+      <DependentUpon>GuestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SharedForms\ContractForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +83,12 @@
     </Compile>
     <Compile Include="SharedForms\ContractsList.Designer.cs">
       <DependentUpon>ContractsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartupForm\StartupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartupForm\StartupForm.Designer.cs">
+      <DependentUpon>StartupForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserForm\MainForm.cs">
       <SubType>Form</SubType>
@@ -86,11 +110,20 @@
     <Compile Include="SharedForms\VehiclesList.Designer.cs">
       <DependentUpon>VehiclesList.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorkerForm\WorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkerForm\WorkerForm.Designer.cs">
+      <DependentUpon>WorkerForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="SharedForms\ContractForm.resx">
       <DependentUpon>ContractForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SharedForms\ContractsList.resx">
       <DependentUpon>ContractsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartupForm\StartupForm.resx">
+      <DependentUpon>StartupForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

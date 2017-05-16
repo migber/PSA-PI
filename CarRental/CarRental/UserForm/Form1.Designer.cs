@@ -32,9 +32,9 @@ namespace CarRental.UserForm
         {
             this.contractsList = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.vehiclesList1 = new VehiclesList();
+            this.vehiclesList1 = new CarRental.SharedForms.VehiclesList();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.contractsList1 = new ContractsList();
+            this.contractsList1 = new CarRental.SharedForms.ContractsList();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.NewContract = new System.Windows.Forms.Button();
             this.NewVehicle = new System.Windows.Forms.Button();
@@ -60,10 +60,10 @@ namespace CarRental.UserForm
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.vehiclesList1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(808, 399);
+            this.tabPage1.Size = new System.Drawing.Size(808, 402);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Vehicles List";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -74,18 +74,18 @@ namespace CarRental.UserForm
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.vehiclesList1.Location = new System.Drawing.Point(3, 6);
-            this.vehiclesList1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.vehiclesList1.Margin = new System.Windows.Forms.Padding(2);
             this.vehiclesList1.Name = "vehiclesList1";
-            this.vehiclesList1.Size = new System.Drawing.Size(799, 387);
+            this.vehiclesList1.Size = new System.Drawing.Size(799, 390);
             this.vehiclesList1.TabIndex = 2;
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.contractsList1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(808, 399);
+            this.tabPage2.Size = new System.Drawing.Size(808, 402);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Contracts List";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -98,15 +98,15 @@ namespace CarRental.UserForm
             this.contractsList1.Location = new System.Drawing.Point(0, 0);
             this.contractsList1.Margin = new System.Windows.Forms.Padding(2);
             this.contractsList1.Name = "contractsList1";
-            this.contractsList1.Size = new System.Drawing.Size(806, 399);
+            this.contractsList1.Size = new System.Drawing.Size(806, 402);
             this.contractsList1.TabIndex = 0;
             // 
             // tabPage3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(808, 459);
+            this.tabPage3.Size = new System.Drawing.Size(808, 402);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -138,6 +138,7 @@ namespace CarRental.UserForm
             this.Controls.Add(this.NewContract);
             this.Controls.Add(this.contractsList);
             this.Name = "MainForm";
+            this.Text = "User Form";
             this.contractsList.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
