@@ -1,9 +1,9 @@
-﻿using CarRental.Models.Vehicle;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Windows.Forms;
+using CarRental.Models.Vehicle;
+using CarRental.UserForm;
 
-namespace CarRental
+namespace CarRental.SharedForms
 {
     public partial class VehiclesList : UserControl
     {

@@ -1,4 +1,4 @@
-﻿namespace CarRental
+﻿namespace CarRental.SharedForms
 {
     partial class VehiclesList
     {

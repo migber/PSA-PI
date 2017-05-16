@@ -1,6 +1,6 @@
-﻿using BrightIdeasSoftware;
+﻿using CarRental.SharedForms;
 
-namespace CarRental
+namespace CarRental.UserForm
 {
     partial class MainForm
     {
@@ -32,9 +32,9 @@ namespace CarRental
         {
             this.contractsList = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.vehiclesList1 = new CarRental.VehiclesList();
+            this.vehiclesList1 = new VehiclesList();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.contractsList1 = new CarRental.ContractsList();
+            this.contractsList1 = new ContractsList();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.NewContract = new System.Windows.Forms.Button();
             this.NewVehicle = new System.Windows.Forms.Button();

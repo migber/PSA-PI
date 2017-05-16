@@ -54,51 +54,51 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContractForm.cs">
+    <Compile Include="SharedForms\ContractForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ContractForm.Designer.cs">
+    <Compile Include="SharedForms\ContractForm.Designer.cs">
       <DependentUpon>ContractForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ContractsList.cs">
+    <Compile Include="SharedForms\ContractsList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ContractsList.Designer.cs">
+    <Compile Include="SharedForms\ContractsList.Designer.cs">
       <DependentUpon>ContractsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="UserForm\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="UserForm\Form1.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VehicleForm.cs">
+    <Compile Include="SharedForms\VehicleForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VehicleForm.Designer.cs">
+    <Compile Include="SharedForms\VehicleForm.Designer.cs">
       <DependentUpon>VehicleForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="VehiclesList.cs">
+    <Compile Include="SharedForms\VehiclesList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="VehiclesList.Designer.cs">
+    <Compile Include="SharedForms\VehiclesList.Designer.cs">
       <DependentUpon>VehiclesList.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ContractForm.resx">
+    <EmbeddedResource Include="SharedForms\ContractForm.resx">
       <DependentUpon>ContractForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ContractsList.resx">
+    <EmbeddedResource Include="SharedForms\ContractsList.resx">
       <DependentUpon>ContractsList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="UserForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VehicleForm.resx">
+    <EmbeddedResource Include="SharedForms\VehicleForm.resx">
       <DependentUpon>VehicleForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VehiclesList.resx">
+    <EmbeddedResource Include="SharedForms\VehiclesList.resx">
       <DependentUpon>VehiclesList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

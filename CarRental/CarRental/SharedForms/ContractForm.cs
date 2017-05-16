@@ -1,12 +1,12 @@
 ﻿using System;
-using CarRental.Models.Contract;
 using System.Linq;
 using System.Windows.Forms;
 using CarRental.Models;
-using static CarRental.Models.Customer.Customer;
-using static CarRental.Models.Vehicle.Vehicle;
+using CarRental.Models.Contract;
+using CarRental.Models.Customer;
+using CarRental.Models.Vehicle;
 
-namespace CarRental
+namespace CarRental.SharedForms
 {
     public partial class ContractForm : Form
     {
@@ -19,8 +19,8 @@ namespace CarRental
             ContractStatusBox.Items.AddRange(Enum.GetValues(typeof(ContractStatus)).Cast<object>().ToArray());
             PaymentMethodBox.Items.AddRange(Enum.GetValues(typeof(PaymentMethod)).Cast<object>().ToArray());
 
-            VehicleBox.Items.AddRange(Vehicles.Select(c => c.DisplayName).ToArray());
-            CustomerBox.Items.AddRange(Customers.Select(c => c.DisplayName).ToArray());
+            VehicleBox.Items.AddRange(Vehicle.Vehicles.Select(c => c.DisplayName).ToArray());
+            CustomerBox.Items.AddRange(Customer.Customers.Select(c => c.DisplayName).ToArray());
         }
 
         public ContractForm(Contract contract)
@@ -49,11 +49,11 @@ namespace CarRental
                 return;
             }
 
-            Contract.Customer = Customers.FirstOrDefault(c => c.DisplayName == CustomerBox.Text);
+            Contract.Customer = Customer.Customers.FirstOrDefault(c => c.DisplayName == CustomerBox.Text);
             Contract.PickupDate = PickupDate.Value;
             Contract.ReturnDate = ReturnDate.Value;
             Contract.ContractDate = DateTime.Today;
-            Contract.Vehicle = Vehicles.FirstOrDefault(c => c.DisplayName == VehicleBox.Text);
+            Contract.Vehicle = Vehicle.Vehicles.FirstOrDefault(c => c.DisplayName == VehicleBox.Text);
             Contract.DiscountSum = (Contract.Discount + 100) * Contract.Price / 100;
             Contract.PaymentMethod = (PaymentMethod) PaymentMethodBox.SelectedItem;
             Contract.ContractStatus = (ContractStatus) ContractStatusBox.SelectedItem;

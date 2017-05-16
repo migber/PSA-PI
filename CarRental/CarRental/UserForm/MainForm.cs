@@ -1,8 +1,9 @@
 ﻿using System.Windows.Forms;
 using CarRental.Models.Contract;
 using CarRental.Models.Vehicle;
+using CarRental.SharedForms;
 
-namespace CarRental
+namespace CarRental.UserForm
 {
     public partial class MainForm : Form
     {

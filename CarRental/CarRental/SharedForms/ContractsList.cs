@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 using Contract = CarRental.Models.Contract.Contract;
 
-namespace CarRental
+namespace CarRental.SharedForms
 {
     public partial class ContractsList : UserControl
     {

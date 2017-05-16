@@ -3,7 +3,7 @@ using System.Linq;
 using System.Windows.Forms;
 using CarRental.Models.Vehicle;
 
-namespace CarRental
+namespace CarRental.SharedForms
 {
     public partial class VehicleForm : Form
     {

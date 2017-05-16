@@ -1,11 +1,4 @@
-﻿using System;
-using System.Linq;
-using CarRental.Models;
-using CarRental.Models.Customer;
-using CarRental.Models.Contract;
-using CarRental.Models.Vehicle;
-
-namespace CarRental
+﻿namespace CarRental.SharedForms
 {
     partial class ContractForm
     {

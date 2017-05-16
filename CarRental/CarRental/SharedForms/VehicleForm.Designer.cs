@@ -1,8 +1,4 @@
-﻿using System;
-using CarRental.Models.Vehicle;
-using System.Linq;
-
-namespace CarRental
+﻿namespace CarRental.SharedForms
 {
     partial class VehicleForm
     {
