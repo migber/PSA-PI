@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using CarRental.UserForm;
 
 namespace CarRental
 {
@@ -11,7 +10,7 @@ namespace CarRental
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new StartupForm.StartupForm());
         }
     }
 }
