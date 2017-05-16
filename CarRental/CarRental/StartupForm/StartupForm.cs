@@ -1,5 +1,4 @@
 ﻿using CarRental.UserForm;
-using CarRental.AdminForm;
 using System;
 using System.Windows.Forms;
 
@@ -39,10 +38,10 @@ namespace CarRental.StartupForm
 
         private void InitializeForm<T>() where T : Form, new()
         {
-            this.Hide();
-            var userForm = new T();
-            userForm.Closed += (s, args) => this.Close();
-            userForm.Show();
+            Hide();
+            var form = new T();
+            form.Closed += (s, args) => Show();
+            form.Show();
         }
     }
 }
