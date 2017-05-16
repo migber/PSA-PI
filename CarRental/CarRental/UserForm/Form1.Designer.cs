@@ -37,7 +37,6 @@ namespace CarRental.UserForm
             this.contractsList1 = new CarRental.SharedForms.ContractsList();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.NewContract = new System.Windows.Forms.Button();
-            this.NewVehicle = new System.Windows.Forms.Button();
             this.contractsList.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -121,20 +120,9 @@ namespace CarRental.UserForm
             this.NewContract.UseVisualStyleBackColor = true;
             this.NewContract.Click += new System.EventHandler(this.NewContract_Click);
             // 
-            // NewVehicle
-            // 
-            this.NewVehicle.Location = new System.Drawing.Point(148, 12);
-            this.NewVehicle.Name = "NewVehicle";
-            this.NewVehicle.Size = new System.Drawing.Size(110, 23);
-            this.NewVehicle.TabIndex = 5;
-            this.NewVehicle.Text = "New Vehicle";
-            this.NewVehicle.UseVisualStyleBackColor = true;
-            this.NewVehicle.Click += new System.EventHandler(this.button1_Click);
-            // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(840, 512);
-            this.Controls.Add(this.NewVehicle);
             this.Controls.Add(this.NewContract);
             this.Controls.Add(this.contractsList);
             this.Name = "MainForm";
@@ -154,7 +142,7 @@ namespace CarRental.UserForm
         private System.Windows.Forms.TabPage tabPage2;
         private ContractsList contractsList1;
         private System.Windows.Forms.Button NewContract;
-        private System.Windows.Forms.Button NewVehicle;
+        //private System.Windows.Forms.Button NewVehicle;
     }
 }
 

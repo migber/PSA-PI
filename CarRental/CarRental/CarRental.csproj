@@ -114,6 +114,12 @@
     <Compile Include="WorkerForm\WorkerForm.Designer.cs">
       <DependentUpon>WorkerForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminForm\AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DriverForm\DriverForm.resx">
+      <DependentUpon>DriverForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SharedForms\ContractsList.resx">
       <DependentUpon>ContractsList.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkerForm\WorkerForm.resx">
+      <DependentUpon>WorkerForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
