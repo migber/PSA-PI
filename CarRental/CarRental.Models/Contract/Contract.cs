@@ -6,7 +6,9 @@ namespace CarRental.Models.Contract
     public class Contract
     {
         public int Id { get; set; }
+        public int CustomerId { get; set; }
         public Customer.Customer Customer { get; set; }
+        public int VehicleId { get; set; }
         public Vehicle.Vehicle Vehicle { get; set; }
         public DateTime ContractDate { get; set; }
         public DateTime PickupDate { get; set; }
@@ -27,7 +29,7 @@ namespace CarRental.Models.Contract
                 new Contract
                 {
                     Customer = Models.Customer.Customer.Customers[0],
-                    Vehicle = Models.Vehicle.Vehicle.Vehicles[0],
+                    VehicleId = 1,
                     PaymentMethod = PaymentMethod.Cash,
                     Comment = "",
                     ContractDate = new DateTime(2017, 5, 31),
@@ -42,7 +44,7 @@ namespace CarRental.Models.Contract
                 new Contract
                 {
                     Customer = Models.Customer.Customer.InitialCustomersList()[0],
-                    Vehicle = Models.Vehicle.Vehicle.InitialVehiclesList()[1],
+                    VehicleId = 2,
                     PaymentMethod = PaymentMethod.Cash,
                     Comment = "",
                     ContractDate = new DateTime(2017, 2, 19),
@@ -57,7 +59,7 @@ namespace CarRental.Models.Contract
                 new Contract
                 {
                     Customer = Models.Customer.Customer.InitialCustomersList()[1],
-                    Vehicle = Models.Vehicle.Vehicle.InitialVehiclesList()[2],
+                    VehicleId = 3,
                     PaymentMethod = PaymentMethod.BankTransaction,
                     Comment = "Client is very annoying.",
                     ContractDate = new DateTime(2017, 01, 14),
@@ -72,7 +74,7 @@ namespace CarRental.Models.Contract
                 new Contract
                 {
                     Customer = Models.Customer.Customer.InitialCustomersList()[1],
-                    Vehicle = Models.Vehicle.Vehicle.InitialVehiclesList()[3],
+                    VehicleId = 4,
                     PaymentMethod = PaymentMethod.Cash,
                     Comment = "",
                     ContractDate = new DateTime(2016, 12, 12),
@@ -87,7 +89,7 @@ namespace CarRental.Models.Contract
                 new Contract
                 {
                     Customer = Models.Customer.Customer.InitialCustomersList()[0],
-                    Vehicle = Models.Vehicle.Vehicle.InitialVehiclesList()[4],
+                    VehicleId = 5,
                     PaymentMethod = PaymentMethod.Cash,
                     Comment = "",
                     ContractDate = new DateTime(2017, 5, 31),
@@ -102,7 +104,7 @@ namespace CarRental.Models.Contract
                 new Contract
                 {
                     Customer = Models.Customer.Customer.InitialCustomersList()[1],
-                    Vehicle = Models.Vehicle.Vehicle.InitialVehiclesList()[5],
+                    VehicleId = 6,
                     PaymentMethod = PaymentMethod.Cash,
                     Comment = "",
                     ContractDate = new DateTime(2017, 11, 21),
@@ -117,7 +119,7 @@ namespace CarRental.Models.Contract
                 new Contract
                 {
                     Customer = Models.Customer.Customer.InitialCustomersList()[1],
-                    Vehicle = Models.Vehicle.Vehicle.InitialVehiclesList()[6],
+                    VehicleId = 7,
                     PaymentMethod = PaymentMethod.Cash,
                     Comment = "",
                     ContractDate = new DateTime(2017, 5, 31),

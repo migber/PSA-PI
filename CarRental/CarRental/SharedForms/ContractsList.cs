@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System.Linq;
+using System.Windows.Forms;
+using CarRental.SQL.Client;
 using Contract = CarRental.Models.Contract.Contract;
 
 namespace CarRental.SharedForms
@@ -9,13 +11,21 @@ namespace CarRental.SharedForms
         {
             InitializeComponent();
 
-            objectListView1.AddObjects(Contract.InitialContractsList());
+            var vehicles = SqlClient.GetVehiclesList();
+            var contracts = Contract.InitialContractsList();
+            contracts.ForEach(c => c.Vehicle = vehicles.FirstOrDefault(v => v.Id == c.VehicleId));
+            objectListView1.AddObjects(contracts);
+            
             objectListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         public void UpdateContracts()
         {
-            objectListView1.Objects = Contract.Contracts;
+            var vehicles = SqlClient.GetVehiclesList();
+            var contracts = Contract.Contracts;
+            contracts.ForEach(c => c.Vehicle = vehicles.FirstOrDefault(v => v.Id == c.VehicleId));
+
+            objectListView1.Objects = contracts;
         }
 
         private void Edit_Click(object sender, System.EventArgs e)

@@ -74,7 +74,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 17);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Vehicle";
+            this.label3.Text = "VehicleId";
             // 
             // label4
             // 
@@ -83,7 +83,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 17);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Customer";
+            this.label4.Text = "CustomerId";
             // 
             // label5
             // 

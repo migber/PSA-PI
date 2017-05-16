@@ -1,7 +1,7 @@
-﻿using System.Linq;
-using System.Windows.Forms;
-using CarRental.Models.Vehicle;
+﻿using CarRental.Models.Vehicle;
+using CarRental.SQL.Client;
 using CarRental.UserForm;
+using System.Windows.Forms;
 
 namespace CarRental.SharedForms
 {
@@ -11,13 +11,14 @@ namespace CarRental.SharedForms
         {
             InitializeComponent();
 
-            objectListView1.AddObjects(Vehicle.InitialVehiclesList());
+            objectListView1.AddObjects(SqlClient.GetVehiclesList());
             objectListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         public void UpdateVehicles()
         {
-            objectListView1.Objects = Vehicle.Vehicles;
+            objectListView1.Objects = SqlClient.GetVehiclesList();
+            objectListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void Edit_Click(object sender, System.EventArgs e)
@@ -36,8 +37,7 @@ namespace CarRental.SharedForms
 
                     if (result == DialogResult.OK)
                     {
-                        int editedVehicleIndex = Vehicle.Vehicles.IndexOf(Vehicle.Vehicles.FirstOrDefault(v => v.Id == editingForm.Vehicle.Id));
-                        Vehicle.Vehicles[editedVehicleIndex] = editingForm.Vehicle;
+                        SqlClient.UpdateVehicle(editingForm.Vehicle);
 
                         objectListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 

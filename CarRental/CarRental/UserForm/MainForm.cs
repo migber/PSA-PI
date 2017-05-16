@@ -3,6 +3,8 @@ using CarRental.Models.Contract;
 using CarRental.Models.Vehicle;
 using CarRental.SharedForms;
 
+using CarRental.SQL.Client;
+
 namespace CarRental.UserForm
 {
     public partial class MainForm : Form
@@ -10,6 +12,8 @@ namespace CarRental.UserForm
 
         public MainForm()
         {
+            SqlClient.GetVehiclesList();
+
             InitializeComponent();
         }
 
@@ -44,7 +48,7 @@ namespace CarRental.UserForm
 
                 if (result == DialogResult.OK)
                 {
-                    Vehicle.Vehicles.Add(form.Vehicle);
+                    SqlClient.AddVehicle(form.Vehicle);
 
                     RefreshAllData();
                 }

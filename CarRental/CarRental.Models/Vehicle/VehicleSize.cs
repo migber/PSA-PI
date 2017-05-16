@@ -2,7 +2,7 @@
 {
     public enum VehicleSize
     {
-        XXS,
+        XXS = 1,
         XS,
         S,
         M,

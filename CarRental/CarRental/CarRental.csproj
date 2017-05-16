@@ -72,6 +72,8 @@
     <Compile Include="GuestForm\GuestForm.Designer.cs">
       <DependentUpon>GuestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SharedForms\ContractForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,20 +86,6 @@
     <Compile Include="SharedForms\ContractsList.Designer.cs">
       <DependentUpon>ContractsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="StartupForm\StartupForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StartupForm\StartupForm.Designer.cs">
-      <DependentUpon>StartupForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserForm\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserForm\Form1.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SharedForms\VehicleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,29 +98,36 @@
     <Compile Include="SharedForms\VehiclesList.Designer.cs">
       <DependentUpon>VehiclesList.cs</DependentUpon>
     </Compile>
+    <Compile Include="StartupForm\StartupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartupForm\StartupForm.Designer.cs">
+      <DependentUpon>StartupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm\Form1.Designer.cs" />
+    <Compile Include="UserForm\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="WorkerForm\WorkerForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WorkerForm\WorkerForm.Designer.cs">
       <DependentUpon>WorkerForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SharedForms\ContractForm.resx">
-      <DependentUpon>ContractForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SharedForms\ContractsList.resx">
       <DependentUpon>ContractsList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StartupForm\StartupForm.resx">
-      <DependentUpon>StartupForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserForm\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SharedForms\VehicleForm.resx">
       <DependentUpon>VehicleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SharedForms\VehiclesList.resx">
       <DependentUpon>VehiclesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartupForm\StartupForm.resx">
+      <DependentUpon>StartupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -153,6 +148,11 @@
       <Project>{2271f191-e3ce-42e9-bb04-3c1151af10ec}</Project>
       <Name>CarRental.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CarRental.SQL.Client\CarRental.SQL.Client.csproj">
+      <Project>{998DF207-E5BC-418D-8FF3-FF1316DA7953}</Project>
+      <Name>CarRental.SQL.Client</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

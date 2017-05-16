@@ -2,7 +2,7 @@
 {
     public enum VehicleStatus
     {
-        Free,
+        Free = 1,
         InUse,
         UnderRepair
     }
