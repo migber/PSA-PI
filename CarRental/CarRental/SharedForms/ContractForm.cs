@@ -65,11 +65,12 @@ namespace CarRental.SharedForms
 
         private bool ValidateData()
         {
+            int dtcm = DateTime.Compare(Contract.PickupDate, Contract.ReturnDate);
             if (PriceBox.Value < 1 ||
                 String.IsNullOrEmpty(VehicleBox.Text) ||
                 String.IsNullOrEmpty(PaymentMethodBox.Text) ||
                 String.IsNullOrEmpty(ContractStatusBox.Text) ||
-                String.IsNullOrEmpty(CustomerBox.Text))
+                String.IsNullOrEmpty(CustomerBox.Text) || dtcm >= 0)
             {
                 MessageBox.Show(@"Some fields are incorrect or missing.", @"Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -78,5 +79,4 @@ namespace CarRental.SharedForms
 
             return true;
         }
-    }
 }

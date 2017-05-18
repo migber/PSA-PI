@@ -1,4 +1,6 @@
-﻿namespace CarRental.SharedForms
+﻿using System;
+
+namespace CarRental.SharedForms
 {
     partial class ContractForm
     {
@@ -72,7 +74,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 62);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 17);
+            this.label3.Size = new System.Drawing.Size(65, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "VehicleId";
             // 
@@ -81,7 +83,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(255, 62);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 17);
+            this.label4.Size = new System.Drawing.Size(79, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "CustomerId";
             // 
@@ -182,6 +184,7 @@
             this.ReturnDate.Size = new System.Drawing.Size(200, 22);
             this.ReturnDate.TabIndex = 20;
             this.ReturnDate.Value = new System.DateTime(2017, 5, 8, 0, 0, 0, 0);
+            this.ReturnDate.ValueChanged += new System.EventHandler(this.ReturnDate_ValueChanged);
             // 
             // PriceBox
             // 
@@ -207,7 +210,7 @@
             this.DiscountBox.Size = new System.Drawing.Size(81, 22);
             this.DiscountBox.TabIndex = 22;
             // 
-            // ContractCreationForm
+            // ContractForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -229,13 +232,18 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Discount);
             this.Controls.Add(this.label1);
-            this.Name = "ContractCreationForm";
+            this.Name = "ContractForm";
             this.Text = "ContractCreationForm";
             ((System.ComponentModel.ISupportInitialize)(this.PriceBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DiscountBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void ReturnDate_ValueChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
