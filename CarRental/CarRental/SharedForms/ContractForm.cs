@@ -49,7 +49,7 @@ namespace CarRental.SharedForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!ValidateData())
+            if (!DataIsValid())
             {
                 return;
             }
@@ -67,10 +67,10 @@ namespace CarRental.SharedForms
             Close();
         }
 
-        private bool ValidateData()
+        private bool DataIsValid()
         {
             int dtcm = DateTime.Compare(Contract.PickupDate, Contract.ReturnDate);
-            if (PriceBox.Value > 1 ||
+            if (PriceBox.Value < 1 ||
                 String.IsNullOrEmpty(VehicleBox.Text) ||
                 String.IsNullOrEmpty(PaymentMethodBox.Text) ||
                 String.IsNullOrEmpty(ContractStatusBox.Text) ||

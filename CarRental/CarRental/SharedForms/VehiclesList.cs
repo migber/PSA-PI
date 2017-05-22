@@ -45,8 +45,12 @@ namespace CarRental.SharedForms
 
                         objectListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 
-                        var a = objectListView1.Parent.Parent.Parent.Parent as MainForm;
-                        a.RefreshAllData();
+                        Control a = objectListView1.Parent.Parent.Parent.Parent;
+
+                        (a as MainForm)?.RefreshAllData();
+                        (a as WorkerForm.WorkerForm)?.RefreshAllData();
+                        (a as DriverForm.DriverForm)?.RefreshAllData();
+
                     }
                 }
             }

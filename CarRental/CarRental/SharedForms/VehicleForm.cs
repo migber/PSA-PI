@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Windows.Forms;
 using CarRental.Models.Vehicle;
-using CarRental.SQL.Client;
 
 namespace CarRental.SharedForms
 {
@@ -31,53 +30,6 @@ namespace CarRental.SharedForms
 
         public void SetDataBindings()
         {
-            /*if (BrandBox.Text != string.Empty)
-            {
-                MessageBox.Show("Please enter a value to Brand!");
-                return;
-            }
-            else if (ModelBox.Text != string.Empty)
-            {
-                MessageBox.Show("Please enter a value to Model!");
-                return;
-            }
-            else if (ColorBox.Text != string.Empty)
-            {
-                MessageBox.Show("Please enter a value to Color!");
-                return;
-            }
-            else if (TypeBox.Text != string.Empty)
-            {
-                MessageBox.Show("Please enter a value to Type!");
-                return;
-            }
-            else if (WearBox.Text != string.Empty)
-            {
-                MessageBox.Show("Please enter a value to Wear!");
-                return;
-            }
-            else if (CostValue.Value <= 0)
-            {
-                MessageBox.Show("Please enter a value to Cost!");
-                return;
-            }
-            else if (YearValue.Value <= 0)
-            {
-                MessageBox.Show("Please enter a value to Year!");
-                return;
-            }
-            else
-            {
-                BrandBox.DataBindings.Add("Text", _vehicle, "Brand");
-                ModelBox.DataBindings.Add("Text", _vehicle, "Model");
-                ColorBox.DataBindings.Add("Text", _vehicle, "Color");
-                TypeBox.DataBindings.Add("Text", _vehicle, "Type");
-                WearBox.DataBindings.Add("Text", _vehicle, "Wear");
-                CostValue.DataBindings.Add("Value", _vehicle, "Cost");
-                YearValue.DataBindings.Add("Value", _vehicle, "Year");
-            }
-            */
-
             BrandBox.DataBindings.Add("Text", Vehicle, "Brand");
             ModelBox.DataBindings.Add("Text", Vehicle, "Model");
             ColorBox.DataBindings.Add("Text", Vehicle, "Color");
@@ -90,7 +42,7 @@ namespace CarRental.SharedForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!ValidateData())
+            if (!DataIsValid())
             {
                 return;
             }
@@ -110,10 +62,8 @@ namespace CarRental.SharedForms
             Close();
         }
 
-        private bool ValidateData()
+        private bool DataIsValid()
         {
-
-
             if (
                 String.IsNullOrEmpty(BrandBox.Text) ||
                 String.IsNullOrEmpty(ModelBox.Text) ||

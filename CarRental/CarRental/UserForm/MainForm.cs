@@ -40,21 +40,5 @@ namespace CarRental.UserForm
                 }
             }
         }
-
-        private void button1_Click(object sender, System.EventArgs e)
-        {
-            using (var form = new VehicleForm())
-            {
-                form.SetDataBindings();
-                var result = form.ShowDialog();
-
-                if (result == DialogResult.OK)
-                {
-                    vehiclesClient.Create(form.Vehicle);
-
-                    RefreshAllData();
-                }
-            }
-        }
     }
 }
