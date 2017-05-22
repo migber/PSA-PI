@@ -56,8 +56,8 @@ namespace CarRental.SharedForms
             Contract.ContractDate = DateTime.Today;
             Contract.VehicleId = SqlClient.GetVehiclesList().FirstOrDefault(c => c.DisplayName == VehicleBox.Text).Id;
             Contract.DiscountSum = (Contract.Discount + 100) * Contract.Price / 100;
-            Contract.PaymentMethod = (PaymentMethod) PaymentMethodBox.SelectedItem;
-            Contract.ContractStatus = (ContractStatus) ContractStatusBox.SelectedItem;
+            Contract.PaymentMethod = (PaymentMethod)PaymentMethodBox.SelectedItem;
+            Contract.ContractStatus = (ContractStatus)ContractStatusBox.SelectedItem;
 
             DialogResult = DialogResult.OK;
             Close();
@@ -66,7 +66,7 @@ namespace CarRental.SharedForms
         private bool ValidateData()
         {
             int dtcm = DateTime.Compare(Contract.PickupDate, Contract.ReturnDate);
-            if (PriceBox.Value < 1 ||
+            if (PriceBox.Value > 1 ||
                 String.IsNullOrEmpty(VehicleBox.Text) ||
                 String.IsNullOrEmpty(PaymentMethodBox.Text) ||
                 String.IsNullOrEmpty(ContractStatusBox.Text) ||
@@ -79,4 +79,5 @@ namespace CarRental.SharedForms
 
             return true;
         }
+    }
 }
