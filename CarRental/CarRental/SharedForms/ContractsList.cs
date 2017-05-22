@@ -1,18 +1,24 @@
 ﻿using System.Linq;
 using System.Windows.Forms;
+using CarRental.Models.Vehicle;
 using CarRental.SQL.Client;
+using CarRental.SQL.Client.MemoryClient;
+using CarRental.SQL.Client.SqlClient;
 using Contract = CarRental.Models.Contract.Contract;
 
 namespace CarRental.SharedForms
 {
     public partial class ContractsList : UserControl
     {
+        private readonly IClient<Vehicle> vehiclesClient = new VehicleClient();
+        private readonly IClient<Contract> _contractsClient = new ContractsClient();
+
         public ContractsList()
         {
             InitializeComponent();
 
-            var vehicles = SqlClient.GetVehiclesList();
-            var contracts = Contract.InitialContractsList();
+            var vehicles = vehiclesClient.Read();
+            var contracts = _contractsClient.Read().ToList();
             contracts.ForEach(c => c.Vehicle = vehicles.FirstOrDefault(v => v.Id == c.VehicleId));
             objectListView1.AddObjects(contracts);
             
@@ -21,8 +27,8 @@ namespace CarRental.SharedForms
 
         public void UpdateContracts()
         {
-            var vehicles = SqlClient.GetVehiclesList();
-            var contracts = Contract.Contracts;
+            var vehicles = vehiclesClient.Read();
+            var contracts = _contractsClient.Read().ToList();
             contracts.ForEach(c => c.Vehicle = vehicles.FirstOrDefault(v => v.Id == c.VehicleId));
 
             objectListView1.Objects = contracts;

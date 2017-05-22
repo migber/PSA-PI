@@ -5,13 +5,17 @@ using CarRental.SQL.Client;
 using System;
 using System.Linq;
 using System.Windows.Forms;
-using static CarRental.Models.Customer.Customer;
+using CarRental.Models.Vehicle;
+using CarRental.SQL.Client.MemoryClient;
+using CarRental.SQL.Client.SqlClient;
 
 namespace CarRental.SharedForms
 {
     public partial class ContractForm : Form
     {
         public readonly Contract Contract = new Contract();
+        private readonly IClient<Vehicle> _vehicleClient = new VehicleClient();
+        private readonly IClient<Customer> _customerClient = new CustomerClient();
 
         public ContractForm()
         {
@@ -20,8 +24,8 @@ namespace CarRental.SharedForms
             ContractStatusBox.Items.AddRange(Enum.GetValues(typeof(ContractStatus)).Cast<object>().ToArray());
             PaymentMethodBox.Items.AddRange(Enum.GetValues(typeof(PaymentMethod)).Cast<object>().ToArray());
 
-            VehicleBox.Items.AddRange(SqlClient.GetVehiclesList().Select(c => c.DisplayName).ToArray());
-            CustomerBox.Items.AddRange(Customers.Select(c => c.DisplayName).ToArray());
+            VehicleBox.Items.AddRange(_vehicleClient.Read().Select(c => c.DisplayName).ToArray());
+            CustomerBox.Items.AddRange(_customerClient.Read().Select(c => c.DisplayName).ToArray());
         }
 
         public ContractForm(Contract contract)
@@ -31,7 +35,7 @@ namespace CarRental.SharedForms
             CustomerBox.SelectedItem = CustomerBox.Items.Cast<string>()
                 .FirstOrDefault(c => c == Contract.Customer.DisplayName);
             VehicleBox.SelectedItem = VehicleBox.Items.Cast<string>()
-                .FirstOrDefault(c => c == SqlClient.GetVehiclesList()[Contract.VehicleId].DisplayName);
+                .FirstOrDefault(c => c == _vehicleClient.Read()[Contract.VehicleId].DisplayName);
 
             PaymentMethodBox.SelectedItem = Contract.PaymentMethod;
             ContractStatusBox.SelectedItem = Contract.ContractStatus;
@@ -50,11 +54,11 @@ namespace CarRental.SharedForms
                 return;
             }
 
-            Contract.Customer = Customer.Customers.FirstOrDefault(c => c.DisplayName == CustomerBox.Text);
+            Contract.Customer = _customerClient.Read().FirstOrDefault(c => c.DisplayName == CustomerBox.Text);
             Contract.PickupDate = PickupDate.Value;
             Contract.ReturnDate = ReturnDate.Value;
             Contract.ContractDate = DateTime.Today;
-            Contract.VehicleId = SqlClient.GetVehiclesList().FirstOrDefault(c => c.DisplayName == VehicleBox.Text).Id;
+            Contract.VehicleId = _vehicleClient.Read().FirstOrDefault(c => c.DisplayName == VehicleBox.Text).Id;
             Contract.DiscountSum = (Contract.Discount + 100) * Contract.Price / 100;
             Contract.PaymentMethod = (PaymentMethod)PaymentMethodBox.SelectedItem;
             Contract.ContractStatus = (ContractStatus)ContractStatusBox.SelectedItem;

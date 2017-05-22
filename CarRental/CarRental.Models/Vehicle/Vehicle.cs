@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-
-namespace CarRental.Models.Vehicle
+﻿namespace CarRental.Models.Vehicle
 {
-    public class Vehicle
+    public class Vehicle : IEntity
     {
         public Vehicle(int year, int cost)
         {

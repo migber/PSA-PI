@@ -2,11 +2,15 @@
 using CarRental.SQL.Client;
 using System;
 using System.Windows.Forms;
+using CarRental.Models.Vehicle;
+using CarRental.SQL.Client.SqlClient;
 
 namespace CarRental.AdminForm
 {
     public partial class AdminForm : Form
     {
+        private readonly IClient<Vehicle> _client = new VehicleClient();
+
         public AdminForm()
         {
             InitializeComponent();
@@ -21,7 +25,7 @@ namespace CarRental.AdminForm
 
                 if (result == DialogResult.OK)
                 {
-                    SqlClient.AddVehicle(form.Vehicle);
+                    _client.Create(form.Vehicle);
 
                     RefreshAllData();
                 }

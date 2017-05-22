@@ -1,23 +1,27 @@
-﻿using CarRental.Models.Vehicle;
+﻿using System.Linq;
+using CarRental.Models.Vehicle;
 using CarRental.SQL.Client;
 using CarRental.UserForm;
 using System.Windows.Forms;
+using CarRental.SQL.Client.SqlClient;
 
 namespace CarRental.SharedForms
 {
     public partial class VehiclesList : UserControl
     {
+        private readonly IClient<Vehicle> _client = new VehicleClient();
+
         public VehiclesList()
         {
             InitializeComponent();
 
-            objectListView1.AddObjects(SqlClient.GetVehiclesList());
+            objectListView1.AddObjects(_client.Read().ToList());
             objectListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         public void UpdateVehicles()
         {
-            objectListView1.Objects = SqlClient.GetVehiclesList();
+            objectListView1.Objects = _client.Read(); ;
             objectListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
@@ -37,7 +41,7 @@ namespace CarRental.SharedForms
 
                     if (result == DialogResult.OK)
                     {
-                        SqlClient.UpdateVehicle(editingForm.Vehicle);
+                        _client.Update(editingForm.Vehicle);
 
                         objectListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 

@@ -4,16 +4,18 @@ using CarRental.Models.Vehicle;
 using CarRental.SharedForms;
 
 using CarRental.SQL.Client;
+using CarRental.SQL.Client.MemoryClient;
+using CarRental.SQL.Client.SqlClient;
 
 namespace CarRental.UserForm
 {
     public partial class MainForm : Form
     {
+        private readonly IClient<Vehicle> vehiclesClient = new VehicleClient();
+        private readonly IClient<Contract> _contractsClient = new ContractsClient();
 
         public MainForm()
         {
-            SqlClient.GetVehiclesList();
-
             InitializeComponent();
         }
 
@@ -32,7 +34,7 @@ namespace CarRental.UserForm
 
                 if (result == DialogResult.OK)
                 {
-                    Contract.Contracts.Add(form.Contract);
+                    _contractsClient.Create(form.Contract);
 
                     RefreshAllData();
                 }
@@ -48,7 +50,7 @@ namespace CarRental.UserForm
 
                 if (result == DialogResult.OK)
                 {
-                    SqlClient.AddVehicle(form.Vehicle);
+                    vehiclesClient.Create(form.Vehicle);
 
                     RefreshAllData();
                 }
