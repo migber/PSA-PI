@@ -8,9 +8,9 @@ namespace CarRental.SQL.Client.SqlClient
         public override bool Create(Vehicle vehicle)
         {
             var sqlCommand = Connection.CreateCommand();
-            sqlCommand.CommandText = "INSERT INTO Vehicle (`Id`, `Color`, `Wear`, `Brand`, `Model`, `Type`, `Year`, `StatusId`, `SizeId`, `Cost`) VALUES";
+            sqlCommand.CommandText = "INSERT INTO Vehicle (Color, Wear, Brand, Model, Type, Year, StatusId, SizeId, Cost) VALUES";
 
-            sqlCommand.CommandText += $"(NULL, '{vehicle.Color}', '{vehicle.Wear}', '{vehicle.Brand}', '{vehicle.Model}', '{vehicle.Type}', " +
+            sqlCommand.CommandText += $"('{vehicle.Color}', '{vehicle.Wear}', '{vehicle.Brand}', '{vehicle.Model}', '{vehicle.Type}', " +
                                       $"'{vehicle.Year}', '{(int)vehicle.Status}', '{(int)vehicle.Size}', '{vehicle.Cost}');";
             Connection.Open();
 
@@ -25,8 +25,8 @@ namespace CarRental.SQL.Client.SqlClient
             var sqlCommand = Connection.CreateCommand();
             sqlCommand.CommandText = "Update Vehicle SET ";
 
-            sqlCommand.CommandText += $"`Color`='{vehicle.Color}', `Wear`='{vehicle.Wear}',  `Brand`='{vehicle.Brand}', `Model`='{vehicle.Model}', `Type`='{vehicle.Type}', " +
-                                      $"`Year`='{vehicle.Year}', `StatusId`='{(int)vehicle.Status}', `SizeId`='{(int)vehicle.Size}', `Cost`={vehicle.Cost} ";
+            sqlCommand.CommandText += $"Color='{vehicle.Color}', Wear='{vehicle.Wear}',  Brand='{vehicle.Brand}', Model='{vehicle.Model}', Type='{vehicle.Type}', " +
+                                      $"Year='{vehicle.Year}', StatusId='{(int)vehicle.Status}', SizeId='{(int)vehicle.Size}', Cost={vehicle.Cost} ";
             sqlCommand.CommandText += $"WHERE Id='{vehicle.Id}'";
             Connection.Open();
 

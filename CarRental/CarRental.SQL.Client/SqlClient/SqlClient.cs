@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 
 namespace CarRental.SQL.Client
 {
     public abstract class SqlClient<TEntity> : IClient<TEntity>
     {
-        protected readonly MySqlConnection Connection = new MySqlConnection("Server=sql11.freesqldatabase.com;User Id=sql11174816;Password=IaU27AFvtI;Database=sql11174816;");
+        protected readonly SqlConnection Connection = new SqlConnection("Server=tcp:car-rental.database.windows.net,1433;Initial Catalog=CarRental;Persist Security Info=False;User ID=carrental;Password=Ktu12345;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
         public abstract bool Create(TEntity entity);
         public abstract IList<TEntity> Read();
