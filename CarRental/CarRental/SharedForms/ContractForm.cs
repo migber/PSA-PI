@@ -1,5 +1,4 @@
-﻿using CarRental.Models;
-using CarRental.Models.Contract;
+﻿using CarRental.Models.Contract;
 using CarRental.Models.Customer;
 using CarRental.SQL.Client;
 using System;
@@ -8,6 +7,7 @@ using System.Windows.Forms;
 using CarRental.Models.Vehicle;
 using CarRental.SQL.Client.MemoryClient;
 using CarRental.SQL.Client.SqlClient;
+using CarRental.Models;
 
 namespace CarRental.SharedForms
 {
