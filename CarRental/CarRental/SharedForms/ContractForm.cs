@@ -39,6 +39,9 @@ namespace CarRental.SharedForms
 
             PaymentMethodBox.SelectedItem = Contract.PaymentMethod;
             ContractStatusBox.SelectedItem = Contract.ContractStatus;
+            PickupDate.Value = Contract.PickupDate;
+            ReturnDate.Value = Contract.ReturnDate;
+
         }
 
         public void SetDataBindings()
@@ -69,12 +72,12 @@ namespace CarRental.SharedForms
 
         private bool DataIsValid()
         {
-            int dtcm = DateTime.Compare(Contract.PickupDate, Contract.ReturnDate);
+            //int dtcm = DateTime.Compare(Contract.PickupDate, Contract.ReturnDate);
             if (PriceBox.Value < 1 ||
                 String.IsNullOrEmpty(VehicleBox.Text) ||
                 String.IsNullOrEmpty(PaymentMethodBox.Text) ||
                 String.IsNullOrEmpty(ContractStatusBox.Text) ||
-                String.IsNullOrEmpty(CustomerBox.Text) || dtcm >= 0)
+                String.IsNullOrEmpty(CustomerBox.Text))
             {
                 MessageBox.Show(@"Some fields are incorrect or missing.", @"Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);

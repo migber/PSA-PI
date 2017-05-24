@@ -1,18 +1,14 @@
-﻿using System.Windows.Forms;
-using CarRental.Models.Contract;
-using CarRental.Models.Vehicle;
+﻿using CarRental.Models.Contract;
 using CarRental.SharedForms;
-
 using CarRental.SQL.Client;
-using CarRental.SQL.Client.MemoryClient;
 using CarRental.SQL.Client.SqlClient;
+using System.Windows.Forms;
 
 namespace CarRental.UserForm
 {
     public partial class MainForm : Form
     {
-        private readonly IClient<Vehicle> vehiclesClient = new VehicleClient();
-        private readonly IClient<Contract> _contractsClient = new ContractsClient();
+        private readonly IClient<Contract> _contractsClient = new ContractClient();
 
         public MainForm()
         {

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using CarRental.Models.Contract;
-using CarRental.Models;
 using CarRental.Models.Vehicle;
 using System.Linq;
 using CarRental.SQL.Client.MemoryClient;
@@ -16,7 +15,7 @@ namespace CarRental.SQL.Client.SqlClient
         public override bool Create(Contract contract)
         {
             var sqlCommand = Connection.CreateCommand();
-            sqlCommand.CommandText = "INSERT INTO `Contract`(`Id`, `CustomerId`, `VehicleId`, `ContractDate`, `PickupDate`, `ReturnDate`, `Comment`, `Price`, `Discount`, `DiscountSum`, `PaymentMethodId`, `ContractStatusId`) VALUES";
+            sqlCommand.CommandText = "INSERT INTO Contract(Id, CustomerId, VehicleId, ContractDate, PickupDate, ReturnDate, Comment, Price, Discount, DiscountSum, PaymentMethodId, ContractStatusId) VALUES";
 
             sqlCommand.CommandText += $"(NULL, '{contract.CustomerId}', '{contract.VehicleId}', '{contract.ContractDate}', '{contract.PickupDate}', '{contract.ReturnDate}', " +
                                       $"'{contract.Comment}', '{contract.Price}', '{contract.Discount}', '{contract.DiscountSum}' , '{contract.PaymentMethod}' , '{contract.ContractStatus}');";
@@ -31,10 +30,10 @@ namespace CarRental.SQL.Client.SqlClient
         public override bool Update(Contract contract)
         {
             var sqlCommand = Connection.CreateCommand();
-            sqlCommand.CommandText = "Update `Contract` SET ";
+            sqlCommand.CommandText = "Update Contract SET ";
 
-            sqlCommand.CommandText += $"`CustomerId`={contract.CustomerId}, `VehicleId`={contract.VehicleId},`ContractDate`={contract.ContractDate},`PickupDate`={contract.PickupDate}, " +
-                                      $"`ReturnDate`={contract.ReturnDate},`Comment`={contract.Comment},`Price`={contract.Price},`Discount`={contract.Discount},`DiscountSum`={contract.DiscountSum},`PaymentMethodId`={contract.PaymentMethod},`ContractStatusId`={contract.ContractStatus}";
+            sqlCommand.CommandText += $"CustomerId='{contract.CustomerId}', VehicleId='{contract.VehicleId}',ContractDate='{contract.ContractDate}',PickupDate='{contract.PickupDate}', " +
+                                      $"ReturnDate='{contract.ReturnDate}',Comment='{contract.Comment}',Price='{contract.Price}',Discount='{contract.Discount}',DiscountSum='{(int)contract.DiscountSum}',PaymentMethodId='{(int)contract.PaymentMethod}',ContractStatusId='{(int)contract.ContractStatus}'";
             sqlCommand.CommandText += $"WHERE Id='{contract.Id}'";
             Connection.Open();
 

@@ -50,7 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IClient.cs" />
-    <Compile Include="MemoryClient\ContractsClient.cs" />
     <Compile Include="MemoryClient\CustomerClient.cs" />
     <Compile Include="MemoryClient\MemoryClient.cs" />
     <Compile Include="SqlClient\ContractClient.cs" />

@@ -160,7 +160,7 @@ namespace CarRental.SharedForms
             // 
             this.PickupDate.Location = new System.Drawing.Point(12, 139);
             this.PickupDate.MaxDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
-            this.PickupDate.MinDate = new System.DateTime(2017, 5, 8, 0, 0, 0, 0);
+            this.PickupDate.MinDate = new System.DateTime(2010, 5, 8, 0, 0, 0, 0);
             this.PickupDate.Name = "PickupDate";
             this.PickupDate.Size = new System.Drawing.Size(200, 22);
             this.PickupDate.TabIndex = 18;
@@ -184,7 +184,6 @@ namespace CarRental.SharedForms
             this.ReturnDate.Size = new System.Drawing.Size(200, 22);
             this.ReturnDate.TabIndex = 20;
             this.ReturnDate.Value = new System.DateTime(2017, 5, 8, 0, 0, 0, 0);
-            this.ReturnDate.ValueChanged += new System.EventHandler(this.ReturnDate_ValueChanged);
             // 
             // PriceBox
             // 
@@ -239,11 +238,6 @@ namespace CarRental.SharedForms
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }
-
-        private void ReturnDate_ValueChanged(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         #endregion
