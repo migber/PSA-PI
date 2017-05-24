@@ -35,7 +35,7 @@ namespace CarRental.SharedForms
             CustomerBox.SelectedItem = CustomerBox.Items.Cast<string>()
                 .FirstOrDefault(c => c == Contract.Customer.DisplayName);
             VehicleBox.SelectedItem = VehicleBox.Items.Cast<string>()
-                .FirstOrDefault(c => c == _vehicleClient.Read()[Contract.VehicleId].DisplayName);
+                .FirstOrDefault(c => c == _vehicleClient.Read().FirstOrDefault(v => v.Id == Contract.VehicleId).DisplayName);
 
             PaymentMethodBox.SelectedItem = Contract.PaymentMethod;
             ContractStatusBox.SelectedItem = Contract.ContractStatus;

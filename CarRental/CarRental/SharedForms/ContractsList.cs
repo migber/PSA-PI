@@ -84,10 +84,12 @@ namespace CarRental.SharedForms
 
                         Control a = objectListView1.Parent.Parent.Parent.Parent;
 
+                        UpdateContracts();
                         (a as MainForm)?.RefreshAllData();
                         (a as WorkerForm.WorkerForm)?.RefreshAllData();
                         (a as DriverForm.DriverForm)?.RefreshAllData();
 
+                        
                     }
                 }
             }

@@ -1,8 +1,8 @@
-﻿namespace CarRental.Models
+﻿namespace CarRental.Models.Contract
 {
     public enum PaymentMethod
     {
         Cash = 1,
-        BankTransaction =2
+        BankTransaction
     }
 }

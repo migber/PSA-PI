@@ -2,7 +2,7 @@
 {
     public enum ContractStatus
     {
-        Ordered,
+        Ordered = 1,
         Approved,
         Cancelled,
         Finnished
