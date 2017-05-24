@@ -15,10 +15,10 @@ namespace CarRental.SQL.Client.SqlClient
         public override bool Create(Contract contract)
         {
             var sqlCommand = Connection.CreateCommand();
-            sqlCommand.CommandText = "INSERT INTO Contract(Id, CustomerId, VehicleId, ContractDate, PickupDate, ReturnDate, Comment, Price, Discount, DiscountSum, PaymentMethodId, ContractStatusId) VALUES";
+            sqlCommand.CommandText = "INSERT INTO Contract(CustomerId, VehicleId, ContractDate, PickupDate, ReturnDate, Comment, Price, Discount, DiscountSum, PaymentMethodId, ContractStatusId) VALUES";
 
-            sqlCommand.CommandText += $"(NULL, '{contract.CustomerId}', '{contract.VehicleId}', '{contract.ContractDate}', '{contract.PickupDate}', '{contract.ReturnDate}', " +
-                                      $"'{contract.Comment}', '{contract.Price}', '{contract.Discount}', '{contract.DiscountSum}' , '{contract.PaymentMethod}' , '{contract.ContractStatus}');";
+            sqlCommand.CommandText += $"('{contract.CustomerId}', '{contract.VehicleId}', '{contract.ContractDate}', '{contract.PickupDate}', '{contract.ReturnDate}', " +
+                                      $"'{contract.Comment}', '{contract.Price}', '{contract.Discount}', '{(int)contract.DiscountSum}' , '{(int)contract.PaymentMethod}' , '{(int)contract.ContractStatus}');";
             Connection.Open();
 
             var result = sqlCommand.ExecuteNonQuery() >= 0;

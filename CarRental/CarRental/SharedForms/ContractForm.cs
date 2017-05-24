@@ -58,6 +58,7 @@ namespace CarRental.SharedForms
             }
 
             Contract.Customer = _customerClient.Read().FirstOrDefault(c => c.DisplayName == CustomerBox.Text);
+            Contract.CustomerId = Contract.Customer.Id;
             Contract.PickupDate = PickupDate.Value;
             Contract.ReturnDate = ReturnDate.Value;
             Contract.ContractDate = DateTime.Today;
